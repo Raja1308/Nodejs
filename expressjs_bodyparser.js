@@ -3,11 +3,13 @@ const app = express()
 const bodyparser = require("body-parser")
 app.use(bodyparser.urlencoded({extended :false}))
 
-app.get('/add',(req, res)=>{
-    res.send('<form method="post" action="/saveform"><input type="text" name="name" placeholder="name"><input type="email" name="email" placeholder="email"><button type="submit">Save</button></form>')
+app.get('/add-product',(req, res)=>{
+    res.send('<form method="post" action="/saveform"><input type="text" name="name" placeholder="name"><input type="email" name="Email" placeholder="email"><input type="text" name="Size" placeholder="Size"><button type="submit">Save</button></form>')
 })
 
 app.post('/saveform',(req, res)=>{
- res.send(req.body)
+
+   console.log(req.body); 
+//  res.send(req.body)
 })
-app.listen(3000)
+app.listen(2000)
